@@ -92,3 +92,5 @@ gem "rubycritic", "~> 4.9", :group => :dev
 gem "hot-glue", "~> 0.6.1"
 
 gem "cssbundling-rails", "~> 1.3"
+
+gem "devise", "~> 4.9"
