@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "__widget-new" do %>
+  <h3>
+    New Widget
+  </h3>
+  <%= form_with model:  widget, url: widgets_path, method: :post do  |f| %>
+    <%=  render partial: "widgets/form",
+locals: { widget: widget, f: f} %>
+ <% end %>
+<% end %>

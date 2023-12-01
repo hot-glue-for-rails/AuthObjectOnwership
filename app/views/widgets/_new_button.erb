@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "__widget-new" do %>
+  <div>
+    <%= link_to "New Widget",  new_widget_path, disable_with: "Loading...", class: "new-widget-button btn btn-primary pull-right  " %>
+  </div>
+<% end %>

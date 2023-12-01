@@ -1,0 +1,38 @@
+<%= turbo_frame_tag "__widgets-list"   do %>
+  <div class="container ">
+    
+      <h4>
+        WIDGETS
+      </h4>
+    
+
+    <%= render partial: "widgets/new_button", locals: {} %><br />
+
+    
+      
+        <div class="row ">
+          <div class='col-sm-1 heading--widget--name' >Name</div>
+
+          
+
+          <div class=' scaffold-col-heading scaffold-col-heading-buttons col-sm-1' >
+          </div>
+        </div>
+      
+
+      <% if widgets.empty? %>
+    <div>
+        None
+    </div>
+      <% end %>
+      <% widgets.each do |widget| %>
+        <%= render partial: 'widgets/line', locals: {widget: widget}
+            .merge(defined?(nested_for) ? {nested_for: nested_for} : {})
+      
+        %>
+      <% end %>
+      
+    <% if widgets.respond_to?(:total_pages) %><%= paginate(widgets) %> <% end %>
+  
+  </div>
+<% end %>

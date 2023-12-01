@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "__#{dom_id(widget)}" do  %>
+<div class="cell editable" style="position: relative;">
+  <% if widget.errors.any? %>
+  <%= render(partial: "errors", locals: {resource: widget }) %>
+  <% end %>
+  <h2>Editing <%= widget.name %></h2>
+  <%= form_with model: widget, url: widget_path(widget) do |f| %>
+  <%=  render partial: "widgets/form",  locals: {:widget => widget, f: f} %>
+  <% end %>
+</div>
+<% end %>

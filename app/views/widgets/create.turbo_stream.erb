@@ -1,0 +1,17 @@
+<% if @widget.errors.none? %>
+  <%= turbo_stream.replace "__widgets-list" + "" do %>
+  <%= render partial: "list", locals: {widgets: @widgets} %>
+  <% end %>
+  <% end %>
+
+  <%= turbo_stream.replace "__widget-new" do %>
+  <% if @widget.errors.none? %>
+  <%= render partial: "new_button", locals: {} %>
+  <% else %>
+  <%= render partial: "new_form", locals: {widget: @widget} %>
+  <% end %>
+  <% end %>
+  <%= turbo_stream.replace "flash_notices" do %>
+  <%= render partial: "layouts/flash_notices", locals: {resource: @widget} %>
+
+<% end %>

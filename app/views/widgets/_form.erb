@@ -1,0 +1,17 @@
+<div class="row">
+  <div class='col-md-1 cell--widget--name' >  
+    <span class='<%= "alert alert-danger" if widget.errors.details.keys.include?(:name) %>'  style="display: inherit;"  >
+       <br />
+        <%= f.text_field :name, value: widget.name, autocomplete: 'off', size: 40, class: 'form-control', type: '' %>
+       
+      
+      <label class='text-muted small form-text' for=''>Name</label>
+    </span>
+    <br />
+  </div>
+
+  <div class="col-md-2">
+    <%= link_to "Cancel", widgets_path,  {class: "btn btn-secondary"} %>
+    <%= f.submit "Save", class: "btn btn-primary pull-right" %>
+  </div>
+</div>
